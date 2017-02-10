@@ -44,7 +44,8 @@ namespace PhysicsEngine
 		//CompoundShape* box2;
 		//CapsuleWheel* wheel;
 		//ConvexMesh* pyramid;
-		Wedge* wedge;
+		//Wedge* wedge;
+		Hexagon* hex;
 
 	public:
 		///A custom scene class
@@ -65,9 +66,13 @@ namespace PhysicsEngine
 			plane->Color(PxVec3(210.f/255.f,210.f/255.f,210.f/255.f));
 			Add(plane);
 
-			wedge = new Wedge(5.0f, 2.0f, 2.0f);
+			hex = new Hexagon(1.0f, 5.0f);
+			hex->mesh->Color(color_palette[0], 0);
+			Add(hex->mesh);
+
+			/*wedge = new Wedge(5.0f, 2.0f, 2.0f);
 			wedge->mesh->Color(color_palette[0], 0);
-			Add(wedge->mesh);
+			Add(wedge->mesh);*/
 			/*pyramid = new Pyramid(PxTransform(PxVec3(1.0f, 0.0f, 0.0f)));
 			pyramid->Color(color_palette[0], 0);
 			Add(pyramid);*/
