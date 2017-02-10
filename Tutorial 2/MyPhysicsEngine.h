@@ -14,7 +14,7 @@ namespace PhysicsEngine
 		PxVec3(255.f/255.f,45.f/255.f,0.f/255.f),PxVec3(255.f/255.f,140.f/255.f,54.f/255.f),PxVec3(4.f/255.f,117.f/255.f,111.f/255.f)};
 
 	//pyramid vertices
-	static PxVec3 pyramid_verts[] = {PxVec3(0,1,0), PxVec3(1,0,0), PxVec3(-1,0,0), PxVec3(0,0,1), PxVec3(0,0,-1)};
+	static PxVec3 pyramid_verts[] = {PxVec3(0,5,0), PxVec3(1,0,0), PxVec3(-1,0,0), PxVec3(0,0,1), PxVec3(0,0,-1)};
 	//pyramid triangles: a list of three vertices for each triangle e.g. the first triangle consists of vertices 1, 4 and 0
 	//vertices have to be specified in a counter-clockwise order to assure the correct shading in rendering
 	static PxU32 pyramid_trigs[] = {1, 4, 0, 3, 1, 0, 2, 3, 0, 4, 2, 0, 3, 2, 1, 2, 4, 1};
@@ -42,7 +42,9 @@ namespace PhysicsEngine
 	{
 		Plane* plane;
 		//CompoundShape* box2;
-		CapsuleWheel* wheel;
+		//CapsuleWheel* wheel;
+		//ConvexMesh* pyramid;
+		Wedge* wedge;
 
 	public:
 		///A custom scene class
@@ -63,7 +65,14 @@ namespace PhysicsEngine
 			plane->Color(PxVec3(210.f/255.f,210.f/255.f,210.f/255.f));
 			Add(plane);
 
-			wheel = new CapsuleWheel(PxTransform(PxVec3(0.0f, 10.0f, 0.0f)));
+			wedge = new Wedge(5.0f, 2.0f, 2.0f);
+			wedge->mesh->Color(color_palette[0], 0);
+			Add(wedge->mesh);
+			/*pyramid = new Pyramid(PxTransform(PxVec3(1.0f, 0.0f, 0.0f)));
+			pyramid->Color(color_palette[0], 0);
+			Add(pyramid);*/
+
+			/*wheel = new CapsuleWheel(PxTransform(PxVec3(0.0f, 10.0f, 0.0f)));
 			wheel->GetShape(0)->setLocalPose(PxTransform(PxVec3(0.0f, 0.0f, 2.0f), PxQuat(45.0f, PxVec3(1.0f, 0.0f, 0.0f))));
 			wheel->GetShape(1)->setLocalPose(PxTransform(PxVec3(0.0f, 0.0f, -2.0f), PxQuat(45.0f, PxVec3(1.0f, 0.0f, 0.0f))));
 			wheel->GetShape(2)->setLocalPose(PxTransform(PxVec3(0.0f, 2.0f, 0.0f), PxQuat(45.0f, PxVec3(1.0f, 0.0f, 0.0f))));
@@ -72,8 +81,7 @@ namespace PhysicsEngine
 			wheel->GetShape(5)->setLocalPose(PxTransform(PxVec3(0.0f, -1.25f, -1.25f), PxQuat(45.0f, PxVec3(1.0f, 0.0f, 0.0f))));
 			wheel->GetShape(6)->setLocalPose(PxTransform(PxVec3(0.0f, 1.25f, 1.25f), PxQuat(45.0f, PxVec3(1.0f, 0.0f, 0.0f))));
 			wheel->GetShape(7)->setLocalPose(PxTransform(PxVec3(0.0f, -1.25f, 1.25f), PxQuat(45.0f, PxVec3(1.0f, 0.0f, 0.0f))));
-
-			Add(wheel);
+			Add(wheel);*/
 
 			/*box2 = new CompoundShape(PxTransform(PxVec3(.0f,10.f,.0f)));
 			box2->Color(color_palette[0], 0);
