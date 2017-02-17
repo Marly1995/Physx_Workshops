@@ -41,11 +41,12 @@ namespace PhysicsEngine
 	class MyScene : public Scene
 	{
 		Plane* plane;
+		Box* box;
 		//CompoundShape* box2;
 		//CapsuleWheel* wheel;
 		//ConvexMesh* pyramid;
-		//Wedge* wedge;
-		Hexagon* hex;
+		Wedge* wedge;
+		//Hexagon* hex;
 
 	public:
 		///A custom scene class
@@ -60,19 +61,22 @@ namespace PhysicsEngine
 		{
 			SetVisualisation();			
 
-			GetMaterial()->setDynamicFriction(.2f);
+//			GetMaterial()->setDynamicFriction(0.2f);
+//			GetMaterial()->setStaticFriction(0.2f);
+//			GetMaterial()->setRestitution(0.0f);
 
 			plane = new Plane();
 			plane->Color(PxVec3(210.f/255.f,210.f/255.f,210.f/255.f));
 			Add(plane);
 
-			hex = new Hexagon(1.0f, 5.0f);
+			/*hex = new Hexagon(1.0f, 5.0f);
 			hex->mesh->Color(color_palette[0], 0);
-			Add(hex->mesh);
+			Add(hex->mesh);*/
 
-			/*wedge = new Wedge(5.0f, 2.0f, 2.0f);
+			wedge = new Wedge(5.0f, 10.0f, 10.0f);
 			wedge->mesh->Color(color_palette[0], 0);
-			Add(wedge->mesh);*/
+			//Add(wedge->mesh);
+
 			/*pyramid = new Pyramid(PxTransform(PxVec3(1.0f, 0.0f, 0.0f)));
 			pyramid->Color(color_palette[0], 0);
 			Add(pyramid);*/
@@ -93,6 +97,11 @@ namespace PhysicsEngine
 			box2->Color(color_palette[1], 1);
 			box2->GetShape(0)->setLocalPose(PxTransform(PxVec3(1.0f, 0.0f, 0.0f), PxQuat(45.0f, PxVec3(1.0f, 0.0f, 0.0f))));
 			Add(box2);*/
+
+			box = new Box();
+			box->Color(color_palette[1], 0);
+			
+			Add(box);
 		}
 
 		//Custom udpate function
