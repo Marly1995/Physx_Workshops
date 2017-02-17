@@ -61,9 +61,14 @@ namespace PhysicsEngine
 		{
 			SetVisualisation();			
 
-//			GetMaterial()->setDynamicFriction(0.2f);
-//			GetMaterial()->setStaticFriction(0.2f);
-//			GetMaterial()->setRestitution(0.0f);
+			CreateMaterial(0.94, 0.40, 0.1);
+			CreateMaterial(1.10, 0.15, 0.2);
+			CreateMaterial(0.55, 0.40, 0.6);
+			CreateMaterial(0.78, 0.42, 0.2);
+			CreateMaterial(0.04, 0.04, 0.1);
+			CreateMaterial(0.38, 0.20, 0.4);
+			CreateMaterial(0.10, 0.03, 0.1);
+			CreateMaterial(0.10, 0.08, 0.2);
 
 			plane = new Plane();
 			plane->Color(PxVec3(210.f/255.f,210.f/255.f,210.f/255.f));
@@ -75,7 +80,8 @@ namespace PhysicsEngine
 
 			wedge = new Wedge(5.0f, 10.0f, 10.0f);
 			wedge->mesh->Color(color_palette[0], 0);
-			//Add(wedge->mesh);
+			wedge->mesh->Material(GetMaterial(2));
+			Add(wedge->mesh);
 
 			/*pyramid = new Pyramid(PxTransform(PxVec3(1.0f, 0.0f, 0.0f)));
 			pyramid->Color(color_palette[0], 0);
@@ -98,9 +104,9 @@ namespace PhysicsEngine
 			box2->GetShape(0)->setLocalPose(PxTransform(PxVec3(1.0f, 0.0f, 0.0f), PxQuat(45.0f, PxVec3(1.0f, 0.0f, 0.0f))));
 			Add(box2);*/
 
-			box = new Box();
+			box = new Box(PxTransform(PxVec3(2.0f, 10.0f, 2.0f), PxQuat(0.0f, PxVec3(0.0f, 0.0f, 0.0f))));
 			box->Color(color_palette[1], 0);
-			
+			box->Material(GetMaterial(3));
 			Add(box);
 		}
 
