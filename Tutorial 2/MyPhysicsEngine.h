@@ -46,7 +46,7 @@ namespace PhysicsEngine
 		//CapsuleWheel* wheel;
 		//ConvexMesh* pyramid;
 		Wedge* wedge;
-		//Hexagon* hex;
+		Hexagon* hex;
 
 	public:
 		///A custom scene class
@@ -74,13 +74,14 @@ namespace PhysicsEngine
 			plane->Color(PxVec3(210.f/255.f,210.f/255.f,210.f/255.f));
 			Add(plane);
 
-			/*hex = new Hexagon(1.0f, 5.0f);
-			hex->mesh->Color(color_palette[0], 0);
-			Add(hex->mesh);*/
+			hex = new Hexagon(1.0f, 10.0f, PxTransform(PxVec3(0.0f, 0.0f, 0.0f), PxQuat(0.0f, PxVec3(0.0f, 0.0f, 0.0f))));
+			hex->mesh->Color(color_palette[2], 0);
+			hex->mesh->Material(GetMaterial(1));
+			Add(hex->mesh);
 
-			wedge = new Wedge(5.0f, 10.0f, 10.0f);
+			wedge = new Wedge(5.0f, 10.0f, 10.0f, PxTransform(PxVec3(0.0f, 10.0f, 0.0f), PxQuat(0.0f, PxVec3(0.0f, 0.0f, 0.0f))));
 			wedge->mesh->Color(color_palette[0], 0);
-			wedge->mesh->Material(GetMaterial(2));
+			wedge->mesh->Material(GetMaterial(1));
 			Add(wedge->mesh);
 
 			/*pyramid = new Pyramid(PxTransform(PxVec3(1.0f, 0.0f, 0.0f)));
@@ -104,7 +105,7 @@ namespace PhysicsEngine
 			box2->GetShape(0)->setLocalPose(PxTransform(PxVec3(1.0f, 0.0f, 0.0f), PxQuat(45.0f, PxVec3(1.0f, 0.0f, 0.0f))));
 			Add(box2);*/
 
-			box = new Box(PxTransform(PxVec3(2.0f, 10.0f, 2.0f), PxQuat(0.0f, PxVec3(0.0f, 0.0f, 0.0f))));
+			box = new Box(PxTransform(PxVec3(2.0f, 100.0f, 2.0f), PxQuat(0.0f, PxVec3(0.0f, 0.0f, 0.0f))));
 			box->Color(color_palette[1], 0);
 			box->Material(GetMaterial(3));
 			Add(box);

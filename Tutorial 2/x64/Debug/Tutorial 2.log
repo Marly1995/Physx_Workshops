@@ -7,8 +7,6 @@ c:\users\computing\documents\github\physx_workshops\tutorial 2\myphysicsengine.h
 c:\users\computing\documents\github\physx_workshops\tutorial 2\myphysicsengine.h(69): warning C4305: 'argument': truncation from 'double' to 'physx::PxReal'
 c:\users\computing\documents\github\physx_workshops\tutorial 2\myphysicsengine.h(70): warning C4305: 'argument': truncation from 'double' to 'physx::PxReal'
 c:\users\computing\documents\github\physx_workshops\tutorial 2\myphysicsengine.h(71): warning C4305: 'argument': truncation from 'double' to 'physx::PxReal'
-  Generating Code...
-  Compiling...
   VisualDebugger.cpp
 c:\users\computing\documents\github\physx_workshops\tutorial 2\myphysicsengine.h(64): warning C4305: 'argument': truncation from 'double' to 'physx::PxReal'
 c:\users\computing\documents\github\physx_workshops\tutorial 2\myphysicsengine.h(65): warning C4305: 'argument': truncation from 'double' to 'physx::PxReal'
@@ -18,6 +16,10 @@ c:\users\computing\documents\github\physx_workshops\tutorial 2\myphysicsengine.h
 c:\users\computing\documents\github\physx_workshops\tutorial 2\myphysicsengine.h(69): warning C4305: 'argument': truncation from 'double' to 'physx::PxReal'
 c:\users\computing\documents\github\physx_workshops\tutorial 2\myphysicsengine.h(70): warning C4305: 'argument': truncation from 'double' to 'physx::PxReal'
 c:\users\computing\documents\github\physx_workshops\tutorial 2\myphysicsengine.h(71): warning C4305: 'argument': truncation from 'double' to 'physx::PxReal'
+  PhysicsEngine.cpp
+  Renderer.cpp
+  GLFontRenderer.cpp
+  Camera.cpp
   Generating Code...
   Tutorial 2.vcxproj -> C:\Users\Computing\Documents\GitHub\Physx_Workshops\x64\Debug\Tutorial 2.exe
   Tutorial 2.vcxproj -> C:\Users\Computing\Documents\GitHub\Physx_Workshops\x64\Debug\Tutorial 2.pdb (Partial PDB)
